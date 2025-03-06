@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { ArrowLeftIcon } from "@heroicons/react/16/solid";
-import { bahianita, justAnotherHand, teko } from "../../../lib/fonts";
+import { bahianita, justAnotherHand } from "../../../lib/fonts";
 
 const Article = () => {
   const [articleData, setArticleData] = useState<{ id: string; contentHtml: string; title: string; description: string; date: string } | null>(null);

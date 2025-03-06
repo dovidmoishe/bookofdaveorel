@@ -1,9 +1,5 @@
-import Image from "next/image";
 import { Metadata } from "next";
-import Logo from "../../public/assets/logo.jpeg";
-import { Icon } from "next/dist/lib/metadata/types/metadata-types";
-
-import { justAnotherHand, teko } from "../../lib/fonts";
+import { teko } from "../../lib/fonts";
 import Articles from "@/components/Articles";
 import { getSortedArticles } from "../../lib/articles";
 
@@ -21,7 +17,17 @@ export async function getStaticProps() {
   }
 }
 
-export default function Home({ articles }) {
+interface Article {
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+}
+interface HomeProps {
+  articles: Article[];
+}
+
+export default function Home({ articles }: HomeProps) {
 console.log(articles)
   return (
     <section className="mx-auto w-11/12 md:w-1/2 mt-20 flex flex-col gap-16 mb-20">
